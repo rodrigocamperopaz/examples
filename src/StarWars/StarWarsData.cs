@@ -65,6 +65,16 @@ namespace StarWars
             return friends;
         }
 
+        public Task<List<Human>> GetHumansAsync()
+        {
+            return Task.FromResult(_humans);
+        }
+
+        public Task<List<Droid>> GetDroidsAsync()
+        {
+            return Task.FromResult(_droids);
+        }
+
         public Task<Human> GetHumanByIdAsync(string id)
         {
             return Task.FromResult(_humans.FirstOrDefault(h => h.Id == id));
@@ -80,6 +90,11 @@ namespace StarWars
             human.Id = Guid.NewGuid().ToString();
             _humans.Add(human);
             return human;
+        }
+
+        public void DeleteHuman(string id)
+        {
+            _humans.RemoveAll(h => h.Id == id);            
         }
     }
 }

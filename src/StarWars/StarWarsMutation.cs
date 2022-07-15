@@ -31,6 +31,17 @@ namespace StarWars
                     var human = context.GetArgument<Human>("human");
                     return data.AddHuman(human);
                 });
+
+            Field<BooleanGraphType>(
+                "deleteHuman",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "id", Description = "Id of the human to remove." }
+                ),
+                resolve: context =>
+                {
+                    data.DeleteHuman(context.GetArgument<string>("id"));
+                    return true;
+                });
         }
     }
 }

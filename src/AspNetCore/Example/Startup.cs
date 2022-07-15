@@ -34,6 +34,7 @@ namespace Example
 
             app.UseGraphQL<ISchema>();
             app.UseGraphQLPlayground();
+            app.UseWebSockets();
         }
     }
 }
