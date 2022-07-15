@@ -12,15 +12,12 @@ namespace StarWars
         {
             Name = "Query";
 
-<<<<<<< HEAD
+
             Field<ListGraphType<HumanType>>("humans", resolve: context => data.GetHumansAsync());
             Field<ListGraphType<DroidType>>("droids", resolve: context => data.GetDroidsAsync());
-            Field<CharacterInterface>("hero", resolve: context => data.GetDroidByIdAsync("3"));
-            Field<HumanType>(
-=======
+
             FieldAsync<CharacterInterface>("hero", resolve: async context => await data.GetDroidByIdAsync("3"));
             FieldAsync<HumanType>(
->>>>>>> 0a110ebb589f42beb4ac21e0d20777e0d25c2f27
                 "human",
                 arguments: new QueryArguments(
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "id", Description = "id of the human" }
