@@ -48,12 +48,13 @@ namespace StarWars
 
         public IEnumerable<StarWarsCharacter> GetFriends(StarWarsCharacter character)
         {
+            var friends = new List<StarWarsCharacter>();
+
             if (character == null)
             {
-                return null;
+                return friends;
             }
 
-            var friends = new List<StarWarsCharacter>();
             var lookup = character.Friends;
             if (lookup != null)
             {
