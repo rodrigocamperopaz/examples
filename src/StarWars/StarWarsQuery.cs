@@ -16,7 +16,7 @@ namespace StarWars
             Field<ListGraphType<HumanType>>("humans", resolve: context => data.GetHumansAsync().Result);
             Field<ListGraphType<DroidType>>("droids", resolve: context => data.GetDroidsAsync().Result);
 
-            FieldAsync<CharacterInterface>("hero", resolve: async context => await data.GetDroidByIdAsync("3"));
+            FieldAsync<CharacterInterface>("hero", resolve: async context => await data.GetHumanByIdAsync(Guid.Empty.ToString()));
             FieldAsync<HumanType>(
                 "human",
                 arguments: new QueryArguments(

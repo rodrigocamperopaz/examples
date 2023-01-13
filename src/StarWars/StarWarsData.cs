@@ -15,7 +15,7 @@ namespace StarWars
         {
             _humans.Add(new Human
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.Empty.ToString(),
                 Name = "Luke",
                 Friends = new[] { "3", "4" },
                 AppearsIn = new[] { 4, 5, 6 },
