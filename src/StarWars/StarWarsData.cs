@@ -15,7 +15,7 @@ namespace StarWars
         {
             _humans.Add(new Human
             {
-                Id = "1",
+                Id = Guid.NewGuid().ToString(),
                 Name = "Luke",
                 Friends = new[] { "3", "4" },
                 AppearsIn = new[] { 4, 5, 6 },
@@ -23,7 +23,7 @@ namespace StarWars
             });
             _humans.Add(new Human
             {
-                Id = "2",
+                Id = Guid.NewGuid().ToString(),
                 Name = "Vader",
                 AppearsIn = new[] { 4, 5, 6 },
                 HomePlanet = "Tatooine"
@@ -31,7 +31,7 @@ namespace StarWars
 
             _droids.Add(new Droid
             {
-                Id = "3",
+                Id = Guid.NewGuid().ToString(),
                 Name = "R2-D2",
                 Friends = new[] { "1", "4" },
                 AppearsIn = new[] { 4, 5, 6 },
@@ -39,7 +39,7 @@ namespace StarWars
             });
             _droids.Add(new Droid
             {
-                Id = "4",
+                Id = Guid.NewGuid().ToString(),
                 Name = "C-3PO",
                 AppearsIn = new[] { 4, 5, 6 },
                 PrimaryFunction = "Protocol"
